@@ -1,0 +1,31 @@
+{
+  "devDependencies": {
+    "@eslint/js": "^9.27.0",
+    "@rocketseat/eslint-config": "^2.2.2",
+    "@types/node": "^22.15.21",
+    "@types/supertest": "^6.0.3",
+    "eslint": "^9.27.0",
+    "globals": "^16.1.0",
+    "supertest": "^7.1.1",
+    "tsup": "^8.5.0",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.32.1",
+    "vitest": "^3.1.4"
+  },
+  "dependencies": {
+    "@fastify/cookie": "^11.0.2",
+    "dotenv": "^16.5.0",
+    "fastify": "^5.3.3",
+    "knex": "2.4.2",
+    "sqlite3": "^5.1.7",
+    "zod": "^3.25.20"
+  },
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "knex": "tsx node_modules/.bin/knex --knexfile knexfile.ts",
+    "lint": "eslint src --ext .ts --fix",
+    "build": "tsup src --out-dir build",
+    "test": "vitest"
+  }
+}
