@@ -2,11 +2,14 @@ import { Knex, knex as setupKnex } from 'knex';
 import { env } from './env';
 import 'dotenv/config';
 
+const connectionSqlite = {
+  filename: env.DATABASE_URL,
+};
+const connectionPostgress = env.DATABASE_URL;
+
 export const config: Knex.Config = {
-  client: 'sqlite',
-  connection: {
-    filename: env.DATABASE_URL,
-  },
+  client: env.DATABASE_CLIENT,
+  connection: env.DATABASE_CLIENT === 'sqlite' ? connectionSqlite : connectionPostgress,
   useNullAsDefault: true,
   migrations: {
     extension: 'ts',

@@ -1,4 +1,7 @@
 {
+  "engines": {
+    "node": ">=18"
+  },
   "devDependencies": {
     "@eslint/js": "^9.27.0",
     "@rocketseat/eslint-config": "^2.2.2",
